@@ -1,0 +1,15 @@
+body {
+  background-color: #e4e4e4;
+}
+
+.todo-input {
+  margin-right: 10px;
+}
+
+.todo-submit {
+  margin-right: 10px;
+}
+
+button {
+  border-radius: 2px;
+}
