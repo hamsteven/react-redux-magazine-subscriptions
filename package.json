@@ -1,0 +1,19 @@
+{
+  "name": "react-redux-magazine-subscriptions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamsteven/react-redux-magazine-subscriptions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamsteven/react-redux-magazine-subscriptions/issues"
+  },
+  "homepage": "https://github.com/hamsteven/react-redux-magazine-subscriptions#readme"
+}
