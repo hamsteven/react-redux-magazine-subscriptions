@@ -1,6 +1,4 @@
-## A guide to TDD a React/Redux TodoList App
-
-[Read the tutorial](https://medium.com/@sanjsanj/a-guide-to-tdd-a-react-redux-todolist-app-part-1-b8a200bb7091)
+## A guide to TDD a React/Redux SubscriberList App
 
 [View the App online](https://react-redux-magazine-subscriptions.herokuapp.com/)
 

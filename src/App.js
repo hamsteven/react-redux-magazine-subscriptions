@@ -1,51 +1,51 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import AddTodo from './components/add-todo';
-import TodoList from './components/todo-list';
+import AddSubscriber from './components/add-subscriber';
+import SubscriberList from './components/subscriber-list';
 import actions from './actions/actions';
 import './App.css';
 
 export const App = ({
-    submitTodo,
-    todos,
+    submitSubscriber,
+    subscribers,
     inputChanged,
-    disableAddTodo,
+    disableAddSubscriber,
   }) => (
     <div>
-      <h1>Todo list</h1>
+      <h1>Subscriber list</h1>
 
       <h2>Subscriptions</h2>
-      <AddTodo
-        submitTodo={submitTodo}
+      <AddSubscriber
+        submitSubscriber={submitSubscriber}
         inputChanged={inputChanged}
-        disableAddTodo={disableAddTodo}
+        disableAddSubscriber={disableAddSubscriber}
       />
 
-      <TodoList
-        todos={todos}
+      <SubscriberList
+        subscribers={subscribers}
       />
     </div>
 );
 
 App.propTypes = {
-  submitTodo: PropTypes.func.isRequired,
-  todos: PropTypes.arrayOf(PropTypes.shape(
+  submitSubscriber: PropTypes.func.isRequired,
+  subscribers: PropTypes.arrayOf(PropTypes.shape(
     {
       id: PropTypes.number.isRequired,
       text: PropTypes.string.isRequired,
     },
   )).isRequired,
   inputChanged: PropTypes.func.isRequired,
-  disableAddTodo: PropTypes.bool.isRequired,
+  disableAddSubscriber: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = state => state.todoListApp;
+const mapStateToProps = state => state.subscriberListApp;
 
 const mapDispatchToProps = dispatch => ({
-  submitTodo: (text) => {
+  submitSubscriber: (text) => {
     if (text) {
-      dispatch(actions.submitTodo(text));
+      dispatch(actions.submitSubscriber(text));
     }
   },
 

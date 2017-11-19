@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AddTodo = ({ submitTodo, inputChanged, disableAddTodo }) => {
+const AddSubscriber = ({ submitSubscriber, inputChanged, disableAddSubscriber }) => {
     let input;
 
   return (
@@ -9,26 +9,26 @@ const AddTodo = ({ submitTodo, inputChanged, disableAddTodo }) => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          submitTodo(input.value);
+          submitSubscriber(input.value);
           input.value = '';
         }}
       >
 
         <input
-          className="todo-input"
+          className="subscriber-input"
           ref={(element) => {
             input = element;
           }}
           onChange={() => inputChanged(input.value)}
-          placeholder="I'm going to..."
+          placeholder="Interests..."
         />
 
         <button
           type="submit"
-          className="todo-submit"
-          disabled={disableAddTodo}
+          className="subscriber-submit"
+          disabled={disableAddSubscriber}
         >
-          Add Todo
+          Add Subscriber
         </button>
 
       </form>
@@ -36,11 +36,11 @@ const AddTodo = ({ submitTodo, inputChanged, disableAddTodo }) => {
   );
 };
 
-AddTodo.propTypes = {
-  submitTodo: PropTypes.func.isRequired,
+AddSubscriber.propTypes = {
+  submitSubscriber: PropTypes.func.isRequired,
   inputChanged: PropTypes.func.isRequired,
-  disableAddTodo: PropTypes.bool.isRequired,
+  disableAddSubscriber: PropTypes.bool.isRequired,
 };
 
-export default AddTodo;
+export default AddSubscriber;
  

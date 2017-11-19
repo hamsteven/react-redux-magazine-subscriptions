@@ -1,14 +1,14 @@
 import types from '../constants/constants';
 
-let todoId = 0;
+let subscriberId = 0;
 
 const nextId = () => {
-  todoId += 1;
-  return todoId;
+  subscriberId += 1;
+  return subscriberId;
 };
 
 const actions = {
-  submitTodo(text) {
+  submitSubscriber(text) {
     return {
       type: types.SUBMIT_TODO,
       id: nextId(),

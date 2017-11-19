@@ -1,8 +1,8 @@
 import types from '../constants/constants';
 
 export const initialState = {
-  todos: [],
-  disableAddTodo: true,
+  subscribers: [],
+  disableAddSubscriber: true,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -11,21 +11,21 @@ export const reducer = (state = initialState, action) => {
     case types.SUBMIT_TODO:
       return {
         ...state,
-        todos: [
-          ...state.todos,
+        subscribers: [
+          ...state.subscribers,
           {
             id: action.id,
             text: action.text,
           },
         ],
-        disableAddTodo: true,
+        disableAddSubscriber: true,
       };
 
     case types.INPUT_CHANGED:
       if (action.inputText) {
         return {
           ...state,
-          disableAddTodo: false,
+          disableAddSubscriber: false,
         };
       }
       return {

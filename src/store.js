@@ -1,8 +1,8 @@
 import { combineReducers, createStore } from 'redux';
-import todoListApp from './reducers/reducers';
+import subscriberListApp from './reducers/reducers';
 
 const reducers = combineReducers({
-  todoListApp,
+  subscriberListApp,
 });
 
 export default createStore(reducers);
