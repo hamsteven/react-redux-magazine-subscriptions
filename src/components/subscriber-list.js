@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 const SubscriberList = ({ subscribers }) => {
     const subscriberItems = subscribers.map(subscriber => (
     <li key={subscriber.id}>
-      <span className="subscriber-text">
-        {subscriber.text}
-      </span>
+        <span className="subscriber-text">
+          {subscriber.text}: 
+          {/* {subscriber.magazines} */}
+        </span>
     </li>
   ));
 

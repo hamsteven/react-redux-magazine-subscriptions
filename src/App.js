@@ -42,6 +42,12 @@ App.propTypes = {
 
 const mapStateToProps = state => state.subscriberListApp;
 
+// function mapStateToProps(state, ownProps) {
+//   return {
+//     magazines: state.magazines
+//   };
+// }
+
 const mapDispatchToProps = dispatch => ({
   submitSubscriber: (text) => {
     if (text) {

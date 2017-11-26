@@ -15,7 +15,9 @@ export const reducer = (state = initialState, action) => {
           ...state.subscribers,
           {
             id: action.id,
-            text: action.text,
+            // text: 'hi',
+            // magazines: 'vogue',
+            text: action.text,            
           },
         ],
         disableAddSubscriber: true,
