@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const AddSubscriber = ({ submitSubscriber, inputChanged, disableAddSubscriber }) => {
-    let input;
+  let input;
 
   return (
     <div>

@@ -1,4 +1,5 @@
 import types from '../constants/constants';
+import Magazines from '../classes/magazines'
 
 let subscriberId = 0;
 
@@ -7,10 +8,19 @@ const nextId = () => {
   return subscriberId;
 };
 
+// Action Creators
 const actions = {
   submitSubscriber(text) {
+    // text = 'test';
+    // find magazine that goes with keywords
+    const magazines = new Magazines();
+    const matchingMagazines = magazines.getMagazinesForKeywords(text);
+
+    console.log(`matchingMagazines=${matchingMagazines}`);
+    
+
     return {
-      type: types.SUBMIT_TODO,
+      type: types.SUBMIT_SUBSCRIBER,
       id: nextId(),
       text,
     };

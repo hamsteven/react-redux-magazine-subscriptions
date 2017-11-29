@@ -1,4 +1,5 @@
-import { combineReducers, createStore } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import subscriberListApp from './reducers/';
 import magazines from './reducers/magazines-reducer';
 
@@ -7,5 +8,8 @@ const reducers = combineReducers({
   magazines,
 });
 
-export default createStore(reducers);
+export default createStore(
+  reducers, 
+  applyMiddleware(thunk)
+);
  

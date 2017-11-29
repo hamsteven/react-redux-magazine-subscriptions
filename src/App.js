@@ -42,6 +42,10 @@ App.propTypes = {
 
 const mapStateToProps = state => state.subscriberListApp;
 
+// const mapStateToProps = state => {
+//   state.subscriberListApp;
+// }
+
 // function mapStateToProps(state, ownProps) {
 //   return {
 //     magazines: state.magazines
