@@ -2,8 +2,16 @@ import types from '../constants/constants';
 
 export const initialState = {
   subscribers: [],
+  qualities: [],
+  affectedSubscribers: [],
   disableAddSubscriber: true,
+  disableChangeQualities: true,
 };
+
+
+
+
+
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -23,11 +31,35 @@ export const reducer = (state = initialState, action) => {
         disableAddSubscriber: true,
       };
 
+    case types.CHANGE_QUALITIES:
+    return {
+      ...state,
+      affectedSubscribers: [
+        ...state.affectedSubscribers,
+        {
+          id: action.id,
+          text: action.text,            
+        },
+      ],
+      disableChangeQualities: true,
+    };
+
     case types.INPUT_CHANGED:
       if (action.inputText) {
         return {
           ...state,
           disableAddSubscriber: false,
+        };
+      }
+      return {
+        ...state,
+      };
+      
+    case types.INPUT_QUALITIES_CHANGED:
+      if (action.inputText) {
+        return {
+          ...state,
+          disableChangeQualities: false,
         };
       }
       return {

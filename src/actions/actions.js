@@ -18,6 +18,8 @@ const actions = {
 
     console.log(`matchingMagazines=${matchingMagazines}`);
     
+    // magazines.setKeywordsForMagazines('Vogue', 'butts');
+      
 
     return {
       type: types.SUBMIT_SUBSCRIBER,
@@ -26,9 +28,32 @@ const actions = {
     };
   },
 
+  changeQualities(text) {
+    // text = 'test';
+    // find magazine that goes with keywords
+    const magazines = new Magazines();    
+    magazines.setKeywordsForMagazines('Vogue', 'butts');
+      
+    // const myObj = { 'hi': 'there'};
+
+    return {
+      type: types.CHANGE_QUALITIES,
+      id: nextId(),
+      text,
+      // myObj,
+    };
+  },
+
   inputChanged(inputText) {
     return {
       type: types.INPUT_CHANGED,
+      inputText,
+    };
+  },
+
+  inputQualitiesChanged(inputText) {
+    return {
+      type: types.INPUT_QUALITIES_CHANGED,
       inputText,
     };
   },
