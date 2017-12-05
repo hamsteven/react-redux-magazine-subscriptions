@@ -18,10 +18,11 @@ export const App = ({
     qualities,
     inputQualitiesChanged,    
     affectedSubscribers,
-    disableChangeQualities,    
+    disableChangeQualities,  
+    magazines  
   }) => (
     <div>
-      <h1>Subscriber list</h1>
+      <h1>Magazine Subscriber Tool</h1>
 
       <h2>Subscriptions</h2>
       <AddSubscriber
@@ -44,9 +45,9 @@ export const App = ({
         affectedSubscribers={affectedSubscribers}
       />
 
-      {/* <MagazineList
+      <MagazineList
         magazines={magazines}
-      /> */}
+      />
 
     </div>
 );

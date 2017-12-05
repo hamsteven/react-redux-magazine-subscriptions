@@ -7,23 +7,6 @@ const AddSubscriber = ({ submitSubscriber, inputChanged, disableAddSubscriber })
 
   return (
     <div>
-
-      {/* <Form model="deep.user" onSubmit={v => console.log(v)}>
-        <div className="field">
-          <label>First name:</label>
-          <Control.text model="deep.user.firstName" />
-        </div>
-
-        <div className="field">
-          <label>Last name:</label>
-          <Control.text model="deep.user.lastName" />
-        </div>
-
-        <button type="submit">
-          Submit (check console)
-        </button>
-      </Form> */}
-
       <Form model="deep.user" 
         onSubmit={ v => {
           submitSubscriber(v);
@@ -31,17 +14,17 @@ const AddSubscriber = ({ submitSubscriber, inputChanged, disableAddSubscriber })
         }}
       >
         <div className="field">
-          <label>Username:</label>
-          <Control.text model="deep.user.username" />
+          {/* <label>Username:</label> */}
+          <Control.text model="deep.user.username" placeholder="Username"/>
         </div>
 
         <div className="field">
-          <label>Interests:</label>
-          <Control.text model="deep.user.interests" />
+          {/* <label>Interests:</label> */}
+          <Control.text model="deep.user.interests" placeholder="Interests"/>
         </div>
 
         <button type="submit">
-          Submit (check console)
+          Add Subscriber
         </button>
       </Form>
 

@@ -1,10 +1,6 @@
 import Data from './data-service';
 
 export default class Magazines {
-    // constructor() {
-    //     // this.currentFloor = 1; 
-    // }
-
     // Get magazines for keywords
     getMagazinesForKeywords(keywords) {
         console.log(`getMagazinesForKeywords: keywords=${keywords}`);
