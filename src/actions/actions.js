@@ -10,21 +10,24 @@ const nextId = () => {
 
 // Action Creators
 const actions = {
-  submitSubscriber(text) {
+  submitSubscriber(obj) {
     // text = 'test';
+    console.log(`ACTION-CREATOR: obj=${JSON.stringify(obj)}`);
     // find magazine that goes with keywords
     const magazines = new Magazines();
-    const matchingMagazines = magazines.getMagazinesForKeywords(text);
-
+    const matchingMagazines = magazines.getMagazinesForKeywords(obj.interests);
+    // obj.magazines = matchingMagazines;
     console.log(`matchingMagazines=${matchingMagazines}`);
     
     // magazines.setKeywordsForMagazines('Vogue', 'butts');
-      
+    const retObj = Object.assign({}, obj, { magazines: matchingMagazines.join(', ')});
 
+    console.log(`ACTION-CREATOR: retObj=${JSON.stringify(retObj)}`);
+    
     return {
       type: types.SUBMIT_SUBSCRIBER,
       id: nextId(),
-      text,
+      retObj,
     };
   },
 

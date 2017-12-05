@@ -7,17 +7,25 @@ export default class Magazines {
 
     // Get magazines for keywords
     getMagazinesForKeywords(keywords) {
-        console.log(`Data=${Data}`);
-        console.log(`Data.magazines=${Data.magazines}`);
-
+        console.log(`getMagazinesForKeywords: keywords=${keywords}`);
+        
+        const qualities = keywords.split(" ");
+        let magazines = [];
+        console.log(`qualities=${qualities}`);
         // Loop through magazines
-        for (const prop in Data.magazines) {
+        for (let prop in Data.magazines) {
             console.log(`Data.magazines.${prop}.keywords = ${Data.magazines[prop].keywords}`);
 
-            if (keywords === Data.magazines[prop].keywords) {
-                return Data.magazines[prop].magazineName;  // If keyword exists, add magazine to list returned.                
+            for (let quality of qualities) {
+                console.log(`quality=${quality}`);
+                if (quality === Data.magazines[prop].keywords) {
+                    console.log('here2');
+                    magazines.push(Data.magazines[prop].magazineName);  // If keyword exists, add magazine to list returned.                
+                }
             }
         }
+
+        return magazines;
     }
 
     // Modify qualities of a magazine

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import AddSubscriber from './components/add-subscriber';
 import ChangeQualities from './components/change-qualities';
 import SubscriberList from './components/subscriber-list';
+import MagazineList from './components/magazine-list';
 import AffectedSubscriberList from './components/affected-subscriber-list';
 import actions from './actions/actions';
 import './App.css';
@@ -43,6 +44,10 @@ export const App = ({
         affectedSubscribers={affectedSubscribers}
       />
 
+      {/* <MagazineList
+        magazines={magazines}
+      /> */}
+
     </div>
 );
 
@@ -51,7 +56,7 @@ App.propTypes = {
   subscribers: PropTypes.arrayOf(PropTypes.shape(
     {
       id: PropTypes.number.isRequired,
-      text: PropTypes.string.isRequired,
+      retObj: PropTypes.object.isRequired,
     },
   )).isRequired,
   changeQualities: PropTypes.func.isRequired,
@@ -84,9 +89,9 @@ const mapStateToProps = state => state.subscriberListApp;
 // }
 
 const mapDispatchToProps = dispatch => ({
-  submitSubscriber: (text) => {
-    if (text) {
-      dispatch(actions.submitSubscriber(text));
+  submitSubscriber: (obj) => {
+    if (obj) {
+      dispatch(actions.submitSubscriber(obj));
     }
   },
 

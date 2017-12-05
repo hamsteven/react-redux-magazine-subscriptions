@@ -8,11 +8,6 @@ export const initialState = {
   disableChangeQualities: true,
 };
 
-
-
-
-
-
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
 
@@ -25,7 +20,7 @@ export const reducer = (state = initialState, action) => {
             id: action.id,
             // text: 'hi',
             // magazines: 'vogue',
-            text: action.text,            
+            retObj: action.retObj,            
           },
         ],
         disableAddSubscriber: true,
